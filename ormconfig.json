@@ -1,0 +1,14 @@
+{
+  "type": "postgres",
+  "host": "postgres",
+  "port": 5432,
+  "username": "admin",
+  "password": "12345",
+  "database": "base-db",
+  "synchronize": true,
+  "logging": false,
+  "entities": ["src/entities/**/*.ts"],
+  "cli": {
+    "entitiesDir": "src/entities"
+  }
+}

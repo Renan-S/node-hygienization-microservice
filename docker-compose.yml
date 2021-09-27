@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  postgres:
+    image: "postgres"
+    container_name: postgreSQL-base-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "12345"
+      POSTGRES_DB: "base-db"
+  node-service:
+    build: .
+    container_name: node-service
+    command: npm start
+    depends_on:
+      - "postgres"
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/node-service
