@@ -52,10 +52,7 @@ export const userBuyProfileController = async (fileName: string): Promise<void> 
         const isMostVisitedValid = cnpj.isValid(validator[6]) || validator[6] === "NULL"
         const isLastPurchaseValid = cnpj.isValid(validator[7]) || validator[7] === "NULL"
 
-        if (isCpfValid && isMostVisitedValid && isLastPurchaseValid) {
-            return true
-        }
-        return false
+        return (isCpfValid && isMostVisitedValid && isLastPurchaseValid)
     }
 
     const removeDuplicates = (array: any[]) => {

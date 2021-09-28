@@ -30,7 +30,7 @@ app.post('/', (req, res) => {
             if (error) {
                 res.send(error)
             } else {
-                res.send('The file was uploaded, please wait a little for processing and saving. Then check it out on data base!')
+                res.send('The file was uploaded, please wait a little for processing and saving. After a few seconds please run docker exec -it postgreSQL-base-db psql -U admin base-db to connect to DB and then run this query to list some of the values SELECT * FROM "user_buy_profile" LIMIT 100;')
                 await userBuyProfileController(file.name)
             }
         })
